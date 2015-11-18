@@ -1,4 +1,6 @@
-﻿//Originating from PUCRS Unity3D Pool
+﻿//Alan Hsiao, Logic & Programming, Pool Audio Project, 11/18/15
+
+//Originating from PUCRS Unity3D Pool
 //https://github.com/fgrehm/pucrs-unity3d-pool
 //For use in LMSC-281 Logic and Programming
 //Audio Assignment
@@ -20,6 +22,9 @@ public class PocketsController : MonoBehaviour {
 	void OnCollisionEnter(Collision collision) {
 		foreach (var transform in redBalls.GetComponentsInChildren<Transform>()) {
 			if (transform.name == collision.gameObject.name) {
+
+				//GetComponent<AudioSource>().Play();
+
 				var objectName = collision.gameObject.name;
 				GameObject.Destroy(collision.gameObject);
 
@@ -30,6 +35,8 @@ public class PocketsController : MonoBehaviour {
 
 		if (cueBall.transform.name == collision.gameObject.name) {
 			cueBall.transform.position = originalCueBallPosition;
+
+			//GetComponent<AudioSource>().Play();
 		}
 	}
 }
